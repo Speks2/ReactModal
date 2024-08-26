@@ -1,19 +1,19 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import '/src/Modal.module.scss'
+import style from './modall.module.scss'
 
 
 const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="modalWrapper" onClick={onClose}>
-      <div className="modal" onClick={(e) => e.stopPropagation()}>
-        <button className="closeButton" onClick={onClose}>
+    <div className={style.modalWrapper} onClick={onClose}>
+      <div className={style.modal}onClick={(e) => e.stopPropagation()}>
+        <button className={style.closeButton} onClick={onClose}>
           Luk
         </button>
-        <div className="modalContent">
+        <div className={style.modalContent}>
           {children}
         </div>
       </div>
